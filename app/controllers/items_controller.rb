@@ -23,6 +23,21 @@ class ItemsController < ApplicationController
     redirect_to "/items/#{@item.id}"
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    # :idでItem.find
+    @item = Item.find(params[:id])
+
+    # データを更新
+    @item.update_attributes(item_params)
+
+    # show.html.erbへリダイレクト
+    redirect_to "/items/#{@item.id}"
+  end
+
   private
 
   def item_params
