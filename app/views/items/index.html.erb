@@ -1,0 +1,14 @@
+<h1>出品商品一覧</h1>
+
+<ul>
+<% @items.each do |item| %>
+  <li><a href="/items/<%= item.id %>"><%= item.name %></a></li>
+<% end %>
+</ul>
+
+<%# ERBのコメント %>
+<!--
+<% @items.each do |item| %>
+  <p><small><%= item.description %></small></p>
+<% end %>
+-->
